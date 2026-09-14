@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | ExpenseTracker</title>
+    <meta name="description" content="Privacy Policy for the ExpenseTracker application.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="assets/app_icon.png" alt="ExpenseTracker Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+                <a href="index.html" style="color: inherit;">ExpenseTracker</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="can-expense-tracker-work-offline.html">Offline Budgeting</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <p>Effective Date: September 2026</p>
+        </div>
+
+        <section class="content-section glass-card">
+            <h2>1. Introduction</h2>
+            <p>At ExpenseTracker, your privacy and data security are our highest priorities. Because financial data is highly sensitive, we have designed our application with an "Offline-First" architecture. This Privacy Policy outlines what data we collect, why we collect it, and how we protect it.</p>
+
+            <h2>2. Information We Collect</h2>
+            <p>When you use ExpenseTracker, we collect the following types of information:</p>
+            <ul>
+                <li><strong>Account Information:</strong> When you create an account, we collect your email address and authentication credentials via Google Firebase Authentication.</li>
+                <li><strong>Financial Data:</strong> Transactions, wallet balances, categories, and contact lending history (Udhaar).</li>
+            </ul>
+
+            <h2>3. How We Use Your Data</h2>
+            <p>Your data is used strictly for providing the application's core functionality to you. We do not sell, rent, or share your personal financial data with third-party advertisers or data brokers.</p>
+            
+            <h2>4. Offline-First & Cloud Sync Security</h2>
+            <p>ExpenseTracker operates primarily offline. Your transaction data is stored locally on your device in a secure database (Hive). To ensure you never lose your data, we provide a background Cloud Sync feature using Google Cloud Firestore.</p>
+            <ul>
+                <li>Your data is synced over secure, encrypted connections (HTTPS/SSL).</li>
+                <li>Firestore Security Rules strictly enforce that your data can only be accessed by your authenticated User ID. Nobody else, including our development team, can view your financial records.</li>
+            </ul>
+
+            <h2>5. Device Permissions</h2>
+            <p>We may request access to your device's storage solely for the purpose of exporting your financial statements to PDF or Excel files upon your direct request.</p>
+
+            <h2>6. Data Deletion</h2>
+            <p>You have the right to delete your account and all associated data at any time. Upon account deletion, all cloud-synced data linked to your User ID is permanently erased from our Firestore database.</p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us through our official support channels.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="logo">
+                    <img src="assets/app_icon.png" alt="ExpenseTracker Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+                    ExpenseTracker
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="can-expense-tracker-work-offline.html">Can Expense Trackers Work Offline?</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
