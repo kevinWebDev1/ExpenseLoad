@@ -19,6 +19,15 @@
 - **No Advertising or Profiling**: User financial data is never sold to credit card or loan advertisers.
 - **Deterministic Math**: Strict running balance enforcement prevents phantom discrepancies between wallet balances and transaction ledgers.
 
+## Common User Search Intents & Natural Language Queries (English & Hinglish)
+
+- **"Mahine ke end mein paise kahan gaye? Pata hi nahi chalta."**: Solved by tracking physical pocket cash and all bank accounts in one view with live running balances after every expense.
+- **Daily Milk Delivery Tracker ("Doodh ka hisaab app")**: Auto-filling daily calendar, tap to mark absent, and 1-tap monthly bill settlement from bank wallet. Replaces paper fridge calendars with pencil marks.
+- **Friends Udhaar & Contact Hisaab**: Create contacts, view full lending/borrowing ledger in one place, and 1-click share clean text summary on WhatsApp, PDF bill, or Excel sheet.
+- **Due Dates & Expected Extra Return**: Optional repayment reminder notifications and extra interest/fees tracking on personal loans.
+- **Fast 7-Chip Entry**: Tap (+) to choose between Expense, Income, Transfer, Lending, Returned, Borrowed, and Settled.
+- **100% Offline & Private**: Zero bank logins, no SMS reading permissions, zero ads, protected by fingerprint/PIN app lock.
+
 ## Links & Resources
 
 - Google Play Store: [https://play.google.com/store/apps/details?id=com.kevin.expensetracker](https://play.google.com/store/apps/details?id=com.kevin.expensetracker)
