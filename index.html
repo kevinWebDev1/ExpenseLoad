@@ -3,10 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExpenseTracker | Take Control of Your Wealth</title>
-    <meta name="description" content="Never miss where your money goes. Track daily expenses, manage multiple wallets, and keep perfect records of personal lending offline.">
+    <title>ExpenseTracker | Take Control of Your Wealth & Daily Work</title>
+    <meta name="description" content="Never miss where your money goes. Track daily expenses, manage multiple bank wallets, track daily services (milk, cook, maid), bill freelance clients, and keep personal lending records offline.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Open Graph & Twitter Meta -->
+    <meta property="og:title" content="ExpenseTracker: Offline Personal Finance, Daily Services & Money Manager">
+    <meta property="og:description" content="Track daily expenses, bank wallets, daily services, freelance client work, and personal lending safely offline.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/1_copy.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="help" href="llms.txt" type="text/markdown" title="LLM context">
+
+    <!-- Schema.org SoftwareApplication & FAQPage Structured Data for AI & Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "ExpenseTracker: Money Manager",
+          "operatingSystem": "Android",
+          "applicationCategory": "FinanceApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "A privacy-first, offline-ready personal expense tracker, money manager, and daily ledger featuring multi-wallet management, daily subscription/service tracking (milk, maid, cook), freelance client work billing, personal lending/borrowing records, and running balance statements with 1-tap WhatsApp, PDF, and Excel exports.",
+          "featureList": [
+            "Offline-first architecture with instant 3-second entry",
+            "Multiple wallets for Cash, UPI, and Bank Accounts with real logos",
+            "Daily service & subscription tracker (Milk, Cook, Maid, Gym) with fractional quantities",
+            "Freelance client work billing with hourly tracking, work notes, and pending receivables",
+            "Built-in Udhaar and personal lending ledger with contact profiles",
+            "1-tap WhatsApp, itemized PDF and Excel statement exports with running balance",
+            "Private encrypted cloud backup with zero bank credential sharing"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does the Daily Tracker work for milk, cook, or subscriptions?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Set up recurring services with your unit rate (e.g. ₹65/Litre) and daily quantity. Each day is marked automatically, and you can easily adjust quantities or pause during vacations. At month-end, tap Settle to record the expense directly into your chosen wallet."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I bill freelance clients and track hourly work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Switch to the Clients mode in the Daily Tracker to log billable hours with work notes. The app automatically calculates your pending receivables, generates professional PDF invoices, and credits your wallet when you record payment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I share statements directly on WhatsApp?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Every monthly statement includes dedicated 1-tap export buttons for WhatsApp, PDF, and Excel. You can send a clean, formatted text breakdown on WhatsApp or attach the complete itemized PDF attendance sheet in seconds."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does ExpenseTracker require my bank account login or SMS passwords?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Never. Unlike bank-syncing apps that break constantly and sell your data to loan companies, ExpenseTracker requires zero bank credentials and zero SMS scraping. Your financial records remain 100% private and reliable."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Udhaar (Personal Lending) work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When you lend money to a friend or borrow for an expense, add it under Lending. ExpenseTracker tracks each contact with real-time net balances so you always know who owes you money and can settle debts with full transaction histories."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens if I lose my phone or switch devices?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your data is safely backed up to your private encrypted cloud account in the background. When you log in on a new device, your wallets, transactions, services, and lending ledgers restore automatically."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the app work without an internet connection?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, 100%. Everything runs locally on your phone with zero loading screens. You can log expenses, track services, and check balances anywhere—even with zero internet signal."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I export my data to Excel for taxes or spreadsheets?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You can export complete, itemized statements with date, category, description, wallet attribution, and running balance columns into clean Excel (.xlsx) spreadsheets anytime."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -18,7 +125,10 @@
             </div>
             <nav>
                 <ul>
+                    <li><a href="audit.html" style="color: #34d399; font-weight: 600;">✨ Free Spending Audit</a></li>
+                    <li><a href="#tutorial">Tutorial</a></li>
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                     <li><a href="can-expense-tracker-work-offline.html">Offline Budgeting</a></li>
                     <li><a href="privacy-policy.html">Privacy</a></li>
                 </ul>
@@ -28,80 +138,103 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <div class="hero-badge">Now available on Google Play</div>
-                <h1>Take total control of your finances.</h1>
-                <p>Track where your money goes, manage multiple bank accounts, and keep perfect records of your personal lending—all safely offline.</p>
-                <a href="#" class="btn-primary">Download Free App</a>
+                <div class="hero-badge"><a href="audit.html" style="color: inherit; text-decoration: none;">🔍 Try 60-Sec Spending Leak Calculator →</a></div>
+                <h1>Take total control of your money & daily work.</h1>
+                <p>Track daily expenses, manage multiple bank accounts, track recurring household services, and bill freelance clients—all safely offline.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.kevin.expensetracker" target="_blank" rel="noopener noreferrer" class="btn-primary">Get it on Google Play</a>
+                <a href="https://youtu.be/dCxXBPtqQlQ" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-left: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 0.75rem 1.25rem; border-radius: 8px; border: 1px solid var(--glass-border); color: #fff; text-decoration: none; font-weight: 500;">▶ Watch Video Tutorial</a>
             </div>
             <div class="hero-image">
                 <img src="assets/1_copy.jpeg" alt="ExpenseTracker App Screenshot" class="device-frame">
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="features">
-            <h2 class="section-title">Everything you need to track your wealth.</h2>
-            <div class="features-grid">
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Multiple Wallets</h3>
-                    <p>Track your money exactly where it lives. Create separate wallets for Cash, UPI, and Banks to maintain perfectly accurate balances.</p>
+        <!-- Video Walkthrough Section -->
+        <section id="tutorial" class="features" style="padding-top: 1rem; padding-bottom: 2rem;">
+            <h2 class="section-title">See How Easy It Is to Track Every Rupee</h2>
+            <div class="glass-card" style="max-width: 860px; margin: 0 auto; overflow: hidden; padding: 1.5rem; text-align: center;">
+                <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    <iframe style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/dCxXBPtqQlQ" title="Expense Tracker: Money Manager - Complete Walkthrough Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Built-in Udhaar Tracker</h3>
-                    <p>Stop forgetting who owes you money. Instantly see a complete history of every rupee exchanged between you and your contacts.</p>
-                </div>
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Deep Filters & Search</h3>
-                    <p>Analyze your spending with custom dates. Instantly track down specific notes or categories across your entire history.</p>
-                </div>
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Offline-First Privacy</h3>
-                    <p>Your data is yours. Log expenses instantly offline, and safely auto-sync to your private cloud backup in the background.</p>
-                </div>
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Excel & PDF Export</h3>
-                    <p>Need to run your own numbers or share a statement? Export your filtered transaction history directly to Excel or PDF with a single tap.</p>
-                </div>
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Lightning Fast Entry</h3>
-                    <p>No loading screens, no ads, no clutter. Our optimized interface lets you log an expense in 3 seconds flat so you can get back to your life.</p>
+                <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Watch the full 6-minute quick start walkthrough on YouTube</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.kevin.expensetracker" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Install Free on Google Play</a>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ / AI Search Optimization Section -->
-        <section class="features" style="padding-top: 0;">
-            <h2 class="section-title">Common Budgeting App Frustrations, Solved.</h2>
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2 class="section-title">Everything you need to master your wealth.</h2>
             <div class="features-grid">
                 <div class="feature-card glass-card">
-                    <h3>Why do bank-syncing apps always break?</h3>
-                    <p>A major complaint with finance apps is broken Plaid connections and locked bank accounts. ExpenseTracker relies on fast, offline-first manual entry, giving you 100% control and reliability without ever handing over your bank passwords.</p>
+                    <div class="feature-icon">🥛</div>
+                    <h3>Daily Tracker & Subscriptions</h3>
+                    <p>Track recurring deliveries like milk, cook, maid, gym, or newspaper. Supports fractional quantities (0.5L, 1.5L), vacation date pauses, and 1-tap monthly wallet settlements.</p>
                 </div>
                 <div class="feature-card glass-card">
-                    <h3>Is my financial data sold to advertisers?</h3>
-                    <p>Unlike mainstream free budgeting apps that analyze your spending to sell you credit cards, ExpenseTracker is privacy-first. Your data is stored locally on your device and privately synced to your own cloud backup. We never sell your data.</p>
+                    <div class="feature-icon">💼</div>
+                    <h3>Freelance & Client Billing</h3>
+                    <p>Log billable hours, track pending receivables with work notes, and generate professional PDF invoices and statements with instant payment recording.</p>
                 </div>
                 <div class="feature-card glass-card">
-                    <h3>How can I track money I lent to a friend?</h3>
-                    <p>Traditional expense trackers completely ignore peer-to-peer lending (Hisaab). We built a dedicated Udhaar tracking feature directly into the app so you never forget who owes you money or when they paid you back.</p>
+                    <div class="feature-icon">🏦</div>
+                    <h3>Multiple Wallets & Banks</h3>
+                    <p>Keep separate ledgers for Cash, UPI accounts, and bank accounts with authentic bank logos. Supports instant wallet-to-wallet transfers with balance accuracy.</p>
                 </div>
                 <div class="feature-card glass-card">
-                    <h3>Why is my current budgeting app so slow?</h3>
-                    <p>Most finance apps require a constant internet connection to load heavy, bloated dashboards. Our true offline-first architecture means ExpenseTracker opens instantly, letting you log a transaction in 3 seconds flat, even with no signal.</p>
+                    <div class="feature-icon">🤝</div>
+                    <h3>Built-in Udhaar / Lending Ledger</h3>
+                    <p>Stop forgetting who owes you money. View complete histories of every rupee lent or borrowed with contact profiles and running balances.</p>
                 </div>
                 <div class="feature-card glass-card">
-                    <h3>What happens if I lose my phone?</h3>
-                    <p>A massive complaint with basic apps is losing years of data or dealing with broken CSV exports. ExpenseTracker solves this by automatically syncing an encrypted backup to your private cloud in the background, ensuring flawless recovery.</p>
+                    <div class="feature-icon">📄</div>
+                    <h3>1-Tap WhatsApp, PDF & Excel Exports</h3>
+                    <p>Share itemized statements directly to WhatsApp or export branded PDF attendance sheets and Excel spreadsheets with a single tap.</p>
                 </div>
                 <div class="feature-card glass-card">
-                    <h3>Why doesn't my balance match my history?</h3>
-                    <p>Many apps suffer from frustrating math glitches and "phantom" entries. ExpenseTracker is engineered with a rock-solid local database that enforces strict mathematical accuracy across all your cash, bank wallets, and Udhaar accounts.</p>
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% Offline-First Privacy</h3>
+                    <p>No bank logins, no SMS scrapers, and no ads. Your data stays securely on your device, with optional encrypted private cloud backup.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="features" style="padding-top: 2rem;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <h3>How does the Daily Tracker work for milk, cook, or subscriptions?</h3>
+                    <p>Set up recurring services with your unit rate (e.g. ₹65/Litre) and daily quantity. Each day is marked automatically, and you can easily adjust quantities or pause during vacations. At month-end, tap 'Pay & Settle' to record the exact expense directly to your chosen wallet.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <h3>Can I bill freelance clients and track hourly work?</h3>
+                    <p>Yes! Switch to the Clients tab in the Daily Tracker to log billable hours with deliverable notes. The app automatically calculates your total pending receivables, lets you generate professional PDF invoices, and credits your wallet when you record payment.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <h3>Can I share statements directly on WhatsApp?</h3>
+                    <p>Yes. Every monthly statement has dedicated 1-tap export buttons for WhatsApp, PDF, and Excel. You can send a clean, formatted text summary on WhatsApp or attach the complete PDF attendance sheet in seconds.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <h3>Does ExpenseTracker require my bank account login or passwords?</h3>
+                    <p>Never. Most finance apps break constantly because third-party bank connections fail, and they sell your data to loan companies. ExpenseTracker is 100% manual and offline-first—giving you complete privacy, zero broken links, and 3-second instant entry.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <h3>How does Udhaar (Personal Lending) work?</h3>
+                    <p>When you lend money to a friend or borrow for an expense, add it under Lending. ExpenseTracker tracks each contact with real-time net balances so you always know who owes you money and can settle debts with full transaction histories.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <h3>What happens if I lose my phone or switch devices?</h3>
+                    <p>Your data is backed up to your own private, encrypted cloud account in the background. When you log in on a new device, your wallets, transactions, services, and lending ledgers restore instantly.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <h3>Does the app work without an internet connection?</h3>
+                    <p>Yes, 100%. Everything runs locally on your phone with zero loading screens. You can log expenses, track services, and check balances anywhere—even in flight mode or areas with no signal.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <h3>Can I export my data to Excel for taxes or spreadsheets?</h3>
+                    <p>Yes. You can export complete, itemized statements with date, category, description, wallet attribution, and running balance columns into clean Excel (.xlsx) spreadsheets anytime.</p>
                 </div>
             </div>
         </section>
@@ -114,9 +247,10 @@
                     ExpenseTracker
                 </div>
                 <div class="footer-links">
+                    <a href="#features">Features</a>
+                    <a href="#faq">FAQ</a>
                     <a href="can-expense-tracker-work-offline.html">Can Expense Trackers Work Offline?</a>
                     <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="#">Contact</a>
                 </div>
             </div>
         </footer>

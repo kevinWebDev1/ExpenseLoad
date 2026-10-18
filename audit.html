@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Spending Leak Calculator | ExpenseTracker</title>
+    <meta name="description" content="Free 60-second interactive budget leak detector. See where your monthly money disappears and how much you could save with offline expense tracking.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .calculator-card {
+            max-width: 780px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background: rgba(22, 27, 34, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .input-group label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .input-group input {
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: #fff;
+            font-size: 1.05rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus {
+            border-color: #10b981;
+        }
+        .result-box {
+            margin-top: 2rem;
+            padding: 1.75rem;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 78, 59, 0.2) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .stat-badge {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #34d399;
+            margin: 0.5rem 0;
+        }
+        .leak-list {
+            margin: 1rem 0;
+            list-style: none;
+            padding: 0;
+        }
+        .leak-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            color: #cbd5e1;
+        }
+        .cta-box {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            text-align: center;
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: 14px;
+            border: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="assets/app_icon.png" alt="ExpenseTracker Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+                <a href="index.html" style="color: inherit; text-decoration: none;">ExpenseTracker</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#tutorial">Tutorial</a></li>
+                    <li><a href="privacy-policy.html">Privacy</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-header" style="text-align: center; margin-top: 2rem;">
+            <div class="hero-badge" style="display: inline-block; margin-bottom: 0.75rem;">100% Free & Private — No Data Uploaded</div>
+            <h1 style="font-size: 2.4rem;">"Mahine Ke End Mein Paise Kahan Gaye?"</h1>
+            <p style="color: #94a3b8; max-width: 600px; margin: 0.5rem auto;">Calculate your unseen spending leaks in 60 seconds. Everything calculates directly inside your browser.</p>
+        </div>
+
+        <div class="calculator-card">
+            <h2 style="font-size: 1.3rem; color: #f8fafc; margin-bottom: 0.5rem;">Enter Your Monthly Estimates</h2>
+            <p style="color: #94a3b8; font-size: 0.9rem;">Fill in your rough numbers below to discover your annual leak rate:</p>
+
+            <form id="auditForm" onsubmit="event.preventDefault(); calculateLeaks();">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="income">Monthly Income / Allowance (₹)</label>
+                        <input type="number" id="income" placeholder="e.g. 50000" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="foodDelivery">Online Food & Dining (Zomato/Swiggy/Eating out)</label>
+                        <input type="number" id="foodDelivery" placeholder="e.g. 6000" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="dailyServices">Daily Household Deliveries (Milk, Paper, Water)</label>
+                        <input type="number" id="dailyServices" placeholder="e.g. 2500" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="untractedUdhaar">Untracked Friends Udhaar / Small Cash Spends</label>
+                        <input type="number" id="untractedUdhaar" placeholder="e.g. 3000" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="subscriptions">Unused Subscriptions & Digital Micro-debits</label>
+                        <input type="number" id="subscriptions" placeholder="e.g. 1500" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="fixedBills">Rent, EMI & Major Utilities</label>
+                        <input type="number" id="fixedBills" placeholder="e.g. 20000" required>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.75rem; text-align: center;">
+                    <button type="submit" class="btn-primary" style="font-size: 1.05rem; padding: 0.9rem 2.2rem; cursor: pointer; border: none; border-radius: 10px; font-weight: 600;">
+                        🔍 Analyze My Spending Leaks Now
+                    </button>
+                </div>
+            </form>
+
+            <div id="resultBox" class="result-box">
+                <h3 style="color: #e2e8f0; font-size: 1.15rem;">Your Spending Leak Diagnosis</h3>
+                <div class="stat-badge" id="annualLeakDisplay">₹0 / year</div>
+                <p id="leakVerdict" style="color: #cbd5e1; line-height: 1.5;"></p>
+
+                <ul class="leak-list" id="leakList"></ul>
+
+                <div class="cta-box">
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">Stop the Leak. Keep Every Rupee Safe.</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        Expense Tracker tracks daily milk delivery, multiple bank wallets, and friends' udhaar with zero bank logins and zero ads.
+                    </p>
+                    <a href="https://play.google.com/store/apps/details?id=com.kevin.expensetracker" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-block; padding: 0.9rem 2rem; font-size: 1.05rem; text-decoration: none; border-radius: 10px;">
+                        📲 Install Free on Google Play
+                    </a>
+                    <div style="margin-top: 0.75rem;">
+                        <a href="https://youtu.be/dCxXBPtqQlQ" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.9rem; text-decoration: none;">▶ Watch 6-min YouTube Tutorial</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="logo">
+                    <img src="assets/app_icon.png" alt="ExpenseTracker Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+                    ExpenseTracker
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="can-expense-tracker-work-offline.html">Offline Budgeting</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function calculateLeaks() {
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const food = parseFloat(document.getElementById('foodDelivery').value) || 0;
+            const services = parseFloat(document.getElementById('dailyServices').value) || 0;
+            const udhaar = parseFloat(document.getElementById('untractedUdhaar').value) || 0;
+            const subs = parseFloat(document.getElementById('subscriptions').value) || 0;
+            const fixed = parseFloat(document.getElementById('fixedBills').value) || 0;
+
+            const totalSpent = food + services + udhaar + subs + fixed;
+            const unloggedLeak = Math.max(0, income - totalSpent);
+            const monthlyDiscretionaryLeak = (food * 0.25) + (udhaar * 0.70) + (subs * 0.50) + (unloggedLeak * 0.40);
+            const annualLeak = Math.round(monthlyDiscretionaryLeak * 12);
+
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+
+            document.getElementById('annualLeakDisplay').innerText = '₹' + annualLeak.toLocaleString('en-IN') + ' / year';
+
+            const verdictEl = document.getElementById('leakVerdict');
+            if (annualLeak > 40000) {
+                verdictEl.innerText = '⚠️ High Spending Leak Detected! Over ₹' + Math.round(annualLeak/12).toLocaleString('en-IN') + ' disappears every month in untracked small cash spends, unreturned friend udhaar, and food delivery surcharges.';
+            } else {
+                verdictEl.innerText = '💡 You are losing roughly ₹' + Math.round(annualLeak/12).toLocaleString('en-IN') + ' per month to untracked micro-spending. Tracking this offline can save you over ₹' + annualLeak.toLocaleString('en-IN') + ' every year.';
+            }
+
+            const leakList = document.getElementById('leakList');
+            leakList.innerHTML = `
+                <li><span>Lost in forgotten friend Udhaar (avg 70% unreturned):</span> <strong>₹${Math.round(udhaar * 0.70 * 12).toLocaleString('en-IN')}/yr</strong></li>
+                <li><span>Impulse food ordering & delivery fees:</span> <strong>₹${Math.round(food * 0.25 * 12).toLocaleString('en-IN')}/yr</strong></li>
+                <li><span>Unused subscriptions / micro-debits:</span> <strong>₹${Math.round(subs * 0.50 * 12).toLocaleString('en-IN')}/yr</strong></li>
+                <li><span>Daily services without month-end count audit:</span> <strong>₹${Math.round(services * 0.15 * 12).toLocaleString('en-IN')}/yr</strong></li>
+            `;
+
+            resultBox.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

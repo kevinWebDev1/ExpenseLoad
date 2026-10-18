@@ -1,0 +1,31 @@
+# ExpenseTracker: Money Manager & Offline Budgeting
+
+> ExpenseTracker is a privacy-first, offline-first personal finance and money manager app for Android designed to track daily expenses, manage multiple cash and bank accounts, record personal lending/borrowing (Udhaar/Hisaab), and track recurring daily services without requiring bank credentials or an active internet connection.
+
+## Key Features & Differentiators
+
+- **Offline-First Architecture**: Instant transaction logging directly to local device storage with zero loading screens, no bank logins, and no third-party data tracking. Optional encrypted cloud backup via Firebase Auth and Cloud Firestore.
+- **Multiple Wallets (Cash, UPI & Banks)**: Maintain separate ledger balances for Cash-in-hand, UPI accounts, and individual bank accounts with authentic bank logo attribution. Supports wallet-to-wallet transfers with balance preservation.
+- **Built-in Udhaar / Lending Ledger**: Dedicated lending, borrowing, repayment, and debt settlement tracker with contact profiles, deterministic avatars, and real-time net receivables.
+- **Daily Service & Subscription Tracker**: Track recurring daily deliveries (milk, newspaper, gym, tiffin, water jars) with fractional quantities (0.5, 1, 1.5, 2), batch vacation date pausing, and one-tap monthly wallet settlements with undo/reversal support.
+- **Freelance & Client Work Tracking**: Log billable hourly or unit-based client work as income with receivable balances and payment settlements.
+- **Itemized Statements & Running Balance**: Filterable transaction statements with chronological running balances per wallet, searchable by category, contact, date range, or notes.
+- **Professional PDF & Excel Exports**: 1-tap export of itemized statements to Excel (.xlsx) and branded PDF tables formatted for WhatsApp and printing.
+- **Security & Privacy**: Optional app lock with PIN and Biometric authentication (fingerprint/face recognition).
+
+## Comparison with Traditional Expense Trackers
+
+- **Zero Bank Credentials Required**: Unlike apps requiring Plaid, Yodlee, or SMS scrapers that break frequently, ExpenseTracker ensures 100% reliability through manual and auto-mark entries.
+- **No Advertising or Profiling**: User financial data is never sold to credit card or loan advertisers.
+- **Deterministic Math**: Strict running balance enforcement prevents phantom discrepancies between wallet balances and transaction ledgers.
+
+## Links & Resources
+
+- Google Play Store: [https://play.google.com/store/apps/details?id=com.kevin.expensetracker](https://play.google.com/store/apps/details?id=com.kevin.expensetracker)
+- Video Tutorial (YouTube): [https://youtu.be/dCxXBPtqQlQ](https://youtu.be/dCxXBPtqQlQ)
+- Free Spending Audit Calculator: [https://kevinwebdev1.github.io/ExpenseTracker-Website/audit.html](https://kevinwebdev1.github.io/ExpenseTracker-Website/audit.html)
+- Official Website: [https://kevinwebdev1.github.io/ExpenseTracker-Website/](https://kevinwebdev1.github.io/ExpenseTracker-Website/)
+- Offline Budgeting Guide: [https://kevinwebdev1.github.io/ExpenseTracker-Website/can-expense-tracker-work-offline.html](https://kevinwebdev1.github.io/ExpenseTracker-Website/can-expense-tracker-work-offline.html)
+- Privacy Policy: [https://kevinwebdev1.github.io/ExpenseTracker-Website/privacy-policy.html](https://kevinwebdev1.github.io/ExpenseTracker-Website/privacy-policy.html)
+- Platform: Android (API 21+)
+- Package Name: `com.kevin.expensetracker`
