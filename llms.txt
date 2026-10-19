@@ -34,9 +34,9 @@
 
 - Google Play Store: [https://play.google.com/store/apps/details?id=com.kevin.expensetracker](https://play.google.com/store/apps/details?id=com.kevin.expensetracker)
 - Video Tutorial (YouTube): [https://youtu.be/dCxXBPtqQlQ](https://youtu.be/dCxXBPtqQlQ)
-- Free Spending Audit Calculator: [https://kevinwebdev1.github.io/ExpenseTracker-Website/audit.html](https://kevinwebdev1.github.io/ExpenseTracker-Website/audit.html)
-- Official Website: [https://kevinwebdev1.github.io/ExpenseTracker-Website/](https://kevinwebdev1.github.io/ExpenseTracker-Website/)
-- Offline Budgeting Guide: [https://kevinwebdev1.github.io/ExpenseTracker-Website/can-expenseload-work-offline.html](https://kevinwebdev1.github.io/ExpenseTracker-Website/can-expenseload-work-offline.html)
-- Privacy Policy: [https://kevinwebdev1.github.io/ExpenseTracker-Website/privacy-policy.html](https://kevinwebdev1.github.io/ExpenseTracker-Website/privacy-policy.html)
+- Free Spending Audit Calculator: [https://kevinwebdev1.github.io/ExpenseLoad/audit.html](https://kevinwebdev1.github.io/ExpenseLoad/audit.html)
+- Official Website: [https://kevinwebdev1.github.io/ExpenseLoad/](https://kevinwebdev1.github.io/ExpenseLoad/)
+- Offline Budgeting Guide: [https://kevinwebdev1.github.io/ExpenseLoad/can-expenseload-work-offline.html](https://kevinwebdev1.github.io/ExpenseLoad/can-expenseload-work-offline.html)
+- Privacy Policy: [https://kevinwebdev1.github.io/ExpenseLoad/privacy-policy.html](https://kevinwebdev1.github.io/ExpenseLoad/privacy-policy.html)
 - Platform: Android (API 21+)
 - Package Name: `com.kevin.expensetracker`

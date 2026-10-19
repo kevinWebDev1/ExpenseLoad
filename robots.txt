@@ -27,4 +27,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://kevinwebdev1.github.io/ExpenseTracker-Website/sitemap.xml
+Sitemap: https://kevinwebdev1.github.io/ExpenseLoad/sitemap.xml

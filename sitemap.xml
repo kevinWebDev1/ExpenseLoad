@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kevinwebdev1.github.io/ExpenseTracker-Website/</loc>
+    <loc>https://kevinwebdev1.github.io/ExpenseLoad/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://kevinwebdev1.github.io/ExpenseTracker-Website/can-expenseload-work-offline.html</loc>
+    <loc>https://kevinwebdev1.github.io/ExpenseLoad/can-expenseload-work-offline.html</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kevinwebdev1.github.io/ExpenseTracker-Website/audit.html</loc>
+    <loc>https://kevinwebdev1.github.io/ExpenseLoad/audit.html</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kevinwebdev1.github.io/ExpenseTracker-Website/privacy-policy.html</loc>
+    <loc>https://kevinwebdev1.github.io/ExpenseLoad/privacy-policy.html</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://kevinwebdev1.github.io/ExpenseTracker-Website/llms.txt</loc>
+    <loc>https://kevinwebdev1.github.io/ExpenseLoad/llms.txt</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
